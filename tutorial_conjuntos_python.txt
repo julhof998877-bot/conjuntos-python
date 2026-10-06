@@ -1,0 +1,437 @@
+CONJUNTOS EM PYTHON
+Tutorial de estudo
+
+Autor: vitorseneme5
+
+1. Introdução
+
+Em Python, um conjunto é uma coleção de elementos que não possui elementos duplicados.
+
+Os conjuntos são representados pelo tipo set.
+
+Eles são muito úteis quando precisamos trabalhar com grupos de valores e realizar operações matemáticas como união, interseção e diferença.
+
+Exemplo:
+
+frutas = {"maçã", "banana", "laranja"}
+
+print(frutas)
+
+
+Um conjunto pode armazenar diferentes tipos de dados:
+
+dados = {10, 20, 30}
+nomes = {"Ana", "Carlos", "Maria"}
+
+2. Características dos conjuntos
+
+Os conjuntos possuem algumas características importantes:
+
+Não permitem elementos duplicados.
+
+São mutáveis.
+
+Não possuem uma ordem fixa de elementos.
+
+Permitem operações matemáticas entre conjuntos.
+
+São muito eficientes para verificar se um elemento pertence a uma coleção.
+
+Exemplo:
+
+numeros = {1, 2, 2, 3, 3, 4}
+
+print(numeros)
+
+
+Resultado:
+
+{1, 2, 3, 4}
+
+
+Os valores repetidos são automaticamente eliminados.
+
+3. Criando um conjunto
+
+Podemos criar um conjunto utilizando chaves:
+
+frutas = {"maçã", "banana", "laranja"}
+
+
+Também podemos criar um conjunto vazio usando set():
+
+conjunto = set()
+
+
+Cuidado:
+
+conjunto = {}
+
+
+Isso cria um dicionário vazio, e não um conjunto.
+
+4. Adicionando elementos
+
+Para adicionar um elemento, usamos add():
+
+frutas = {"maçã", "banana"}
+
+frutas.add("uva")
+
+print(frutas)
+
+
+Agora o conjunto possui também "uva".
+
+5. Removendo elementos
+
+Podemos utilizar remove():
+
+frutas = {"maçã", "banana", "uva"}
+
+frutas.remove("banana")
+
+print(frutas)
+
+
+Também existe o método discard():
+
+frutas.discard("banana")
+
+
+A diferença é que remove() gera um erro caso o elemento não exista, enquanto discard() não gera erro.
+
+6. Verificando se um elemento existe
+
+Podemos utilizar o operador in:
+
+frutas = {"maçã", "banana", "laranja"}
+
+print("banana" in frutas)
+
+
+Resultado:
+
+True
+
+
+Também podemos verificar um elemento que não existe:
+
+print("uva" in frutas)
+
+
+Resultado:
+
+False
+
+7. União de conjuntos
+
+A união reúne todos os elementos dos conjuntos, eliminando os repetidos.
+
+Podemos utilizar o operador |.
+
+Exemplo:
+
+A = {1, 2, 3, 4}
+B = {3, 4, 5, 6}
+
+resultado = A | B
+
+print(resultado)
+
+
+Resultado:
+
+{1, 2, 3, 4, 5, 6}
+
+
+Também podemos utilizar o método union():
+
+resultado = A.union(B)
+
+8. Interseção de conjuntos
+
+A interseção retorna somente os elementos que aparecem nos dois conjuntos.
+
+Utilizamos o operador &.
+
+A = {1, 2, 3, 4}
+B = {3, 4, 5, 6}
+
+resultado = A & B
+
+print(resultado)
+
+
+Resultado:
+
+{3, 4}
+
+
+Também podemos utilizar:
+
+resultado = A.intersection(B)
+
+9. Diferença entre conjuntos
+
+A diferença retorna os elementos que estão no primeiro conjunto, mas não estão no segundo.
+
+Utilizamos o operador -.
+
+A = {1, 2, 3, 4}
+B = {3, 4, 5, 6}
+
+resultado = A - B
+
+print(resultado)
+
+
+Resultado:
+
+{1, 2}
+
+
+Se invertermos:
+
+resultado = B - A
+
+print(resultado)
+
+
+Resultado:
+
+{5, 6}
+
+
+Portanto, a ordem dos conjuntos é importante.
+
+10. Diferença simétrica
+
+A diferença simétrica retorna os elementos que estão em apenas um dos conjuntos.
+
+Utilizamos o operador ^.
+
+A = {1, 2, 3, 4}
+B = {3, 4, 5, 6}
+
+resultado = A ^ B
+
+print(resultado)
+
+
+Resultado:
+
+{1, 2, 5, 6}
+
+
+Os elementos 3 e 4 não aparecem porque estão presentes nos dois conjuntos.
+
+Também podemos utilizar:
+
+resultado = A.symmetric_difference(B)
+
+11. Subconjuntos
+
+Um conjunto é subconjunto de outro quando todos os seus elementos estão presentes no outro conjunto.
+
+Exemplo:
+
+A = {1, 2}
+B = {1, 2, 3, 4}
+
+print(A.issubset(B))
+
+
+Resultado:
+
+True
+
+
+Também podemos utilizar:
+
+print(A <= B)
+
+12. Superconjuntos
+
+Um conjunto é superconjunto quando contém todos os elementos de outro conjunto.
+
+Exemplo:
+
+A = {1, 2}
+B = {1, 2, 3, 4}
+
+print(B.issuperset(A))
+
+
+Resultado:
+
+True
+
+
+Também podemos utilizar:
+
+print(B >= A)
+
+13. Conjuntos disjuntos
+
+Dois conjuntos são disjuntos quando não possuem nenhum elemento em comum.
+
+Exemplo:
+
+A = {1, 2, 3}
+B = {4, 5, 6}
+
+print(A.isdisjoint(B))
+
+
+Resultado:
+
+True
+
+14. Quantidade de elementos
+
+Podemos utilizar len() para descobrir a quantidade de elementos:
+
+numeros = {10, 20, 30, 40}
+
+print(len(numeros))
+
+
+Resultado:
+
+4
+
+15. Percorrendo um conjunto
+
+Podemos utilizar um laço for:
+
+frutas = {"maçã", "banana", "laranja"}
+
+for fruta in frutas:
+    print(fruta)
+
+
+A ordem de impressão dos elementos pode variar, pois conjuntos não possuem uma ordem fixa.
+
+16. Convertendo uma lista em conjunto
+
+Uma utilização muito comum dos conjuntos é remover valores duplicados de uma lista.
+
+Exemplo:
+
+numeros = [1, 2, 2, 3, 3, 4, 4, 5]
+
+resultado = set(numeros)
+
+print(resultado)
+
+
+Resultado:
+
+{1, 2, 3, 4, 5}
+
+17. Exemplo prático
+
+Imagine que temos alunos matriculados em dois cursos.
+
+python = {"Ana", "Carlos", "João", "Maria"}
+java = {"João", "Maria", "Pedro", "Lucas"}
+
+Alunos que estudam os dois cursos
+print(python & java)
+
+
+Resultado:
+
+{"João", "Maria"}
+
+Alunos que estudam pelo menos um dos cursos
+print(python | java)
+
+Alunos que estudam Python, mas não Java
+print(python - java)
+
+
+Resultado:
+
+{"Ana", "Carlos"}
+
+Alunos que estudam somente um dos cursos
+print(python ^ java)
+
+18. Resumo dos principais operadores
+Operação	Operador	Exemplo
+União	`	`
+Interseção	&	A & B
+Diferença	-	A - B
+Diferença simétrica	^	A ^ B
+Subconjunto	<=	A <= B
+Superconjunto	>=	A >= B
+Pertinência	in	x in A
+19. Exercícios
+Exercício 1
+
+Crie dois conjuntos:
+
+A = {1, 2, 3, 4, 5}
+B = {4, 5, 6, 7, 8}
+
+
+Encontre:
+
+A união;
+
+A interseção;
+
+A diferença A - B;
+
+A diferença B - A;
+
+A diferença simétrica.
+
+Exercício 2
+
+Crie uma lista com números repetidos e transforme-a em um conjunto para eliminar as duplicações.
+
+Exercício 3
+
+Crie dois conjuntos contendo nomes de alunos. Descubra quais alunos estão matriculados nas duas turmas.
+
+20. Gabarito
+A = {1, 2, 3, 4, 5}
+B = {4, 5, 6, 7, 8}
+
+print("União:", A | B)
+print("Interseção:", A & B)
+print("A - B:", A - B)
+print("B - A:", B - A)
+print("Diferença simétrica:", A ^ B)
+
+
+Resultados esperados:
+
+União: {1, 2, 3, 4, 5, 6, 7, 8}
+Interseção: {4, 5}
+A - B: {1, 2, 3}
+B - A: {6, 7, 8}
+Diferença simétrica: {1, 2, 3, 6, 7, 8}
+
+Conclusão
+
+Os conjuntos são uma estrutura de dados muito importante em Python.
+
+Eles são especialmente úteis quando precisamos trabalhar com valores únicos e realizar operações como união, interseção e diferença.
+
+Os principais operadores estudados foram:
+
+|  → União
+&  → Interseção
+-  → Diferença
+^  → Diferença simétrica
+
+
+Dominar essas operações facilita a resolução de diversos problemas de programação e também ajuda a compreender conceitos fundamentais da matemática dos conjuntos.
+
+Projeto de estudos — Conjuntos em Python
+
+Autor: vitorseneme5
